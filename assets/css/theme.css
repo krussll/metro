@@ -6,7 +6,9 @@ body {
     overflow-x: hidden;
 }
 .mainheading {
-	padding: 0rem 0rem 1rem 0;
+	padding: 0rem 1rem 1rem 1rem;
+    background-color: #F1F2F4;
+    margin-bottom: 16px;
 }
 
 a {
@@ -329,7 +331,7 @@ span.post-name a,span.post-read-more a:hover {
 .mediumnavigation .navbar-brand img {
 	margin-right:7px;
     vertical-align: text-bottom;
-    max-width:100px;
+    max-width:75px;
 }
 .mainheading h1.sitetitle {
 	font-family:Georgia;
@@ -337,6 +339,7 @@ span.post-name a,span.post-read-more a:hover {
 .mainheading h1.posttitle {
 	font-weight:700;
 	margin-bottom:1rem;
+    text-align: center;
 }
 .intro {
     background-color: #277C80;
@@ -438,7 +441,6 @@ blockquote {
 .featured-image {
     display: block;
     margin-bottom: 2rem !important;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
 }
 video {
     margin-bottom: 2rem !important;
