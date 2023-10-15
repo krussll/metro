@@ -7,7 +7,7 @@ meta_description: "Online Guides To The Best Zoos In The US State-By-State"
 logo: "/assets/images/zoonearme.png"
 favicon: "/assets/images/favicon.ico"
 baseurl: "https://krussll.github.io/metro"
-permalink: /:category/:title
+permalink: /:categories/:title
 email: ""
 google_analytics: ""
 future: true
