@@ -257,6 +257,7 @@ section.recent-posts {
 }
 span.post-name,span.post-date,span.author-meta {
 	display:inline-block;
+    text-align: center;
 }
 span.post-date,span.post-read {
 	color:rgba(0,0,0,.44);
