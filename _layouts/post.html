@@ -13,7 +13,7 @@ post_class: post-template
 				{% if page.route %}<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">{% endif %}
 			
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
-				<div data-alerts id="data-alerts"></div>
+				<div data-alerts class="alerts" id="data-alerts"></div>
 				
 				<p>
 					<small>
@@ -88,11 +88,11 @@ post_class: post-template
 		dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
 
 		alertData.currentIssues.forEach((alert) => {
-			var para = document.createElement("p");
-			var node = document.createTextNode(alert.header);
-			para.appendChild(node);
+			var div = document.createElement("div");
+			div.classList.add("alert");
+			div.innerHTML = alert.header.trim() + alert.description.trim();
 
-			element.appendChild(para);
+			element.appendChild(div);
 		})
 	})
 	.catch(function (err) {
