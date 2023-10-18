@@ -14,7 +14,7 @@ post_class: post-template
 			
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
 				<h2 class="lead" id="data-alerts-summary"></h2>
-				<div data-alerts class="alerts" id="data-alerts"></div>
+				<div data-alerts class="line-alerts" id="data-alerts"></div>
 				
 				<p>
 					<small>
@@ -32,7 +32,7 @@ post_class: post-template
 		<div class="col-md-8 col-lg-8">
 			<!-- Post Content -->
 			<div class="article-post"  itemprop="articleBody"> 
-				<div data-alerts class="alerts future" id="data-future-alerts"></div>
+				<div data-alerts class="line-alerts future" id="data-future-alerts"></div>
 				<div class="d-md-none">
 					{% if page.route %}
 						<h3>Stops on the {{ page.route }} train</h3>
@@ -104,7 +104,7 @@ post_class: post-template
 
 		alertData.currentIssues.forEach((alert) => {
 			var div = document.createElement("div");
-			div.classList.add("alert");
+			div.classList.add("line-alert");
 			div.innerHTML = alert.header.trim() + alert.description.trim();
 
 			element.appendChild(div);
@@ -121,7 +121,7 @@ post_class: post-template
 
 		alertData.futureIssues.forEach((alert) => {
 			var div = document.createElement("div");
-			div.classList.add("alert");
+			div.classList.add("line-alert");
 			div.innerHTML = alert.header.trim() + alert.description.trim();
 
 			futureAlertEl.appendChild(div);
