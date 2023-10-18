@@ -75,9 +75,9 @@ post_class: post-template
 {% if page.route %}
 	<script>
 
-	fetch('https://us-central1-mythic-rain-390.cloudfunctions.net/GetMetroStatus?routeId={{ page.route }}').then(function (response) {
+	fetch('https://us-central1-mythic-rain-390.cloudfunctions.net/GetMetroStatus?routeId={{ page.route }}').then(async (response) => {
 		
-		const alertData = response.json()
+		const alertData = await response.json()
 		console.log('json', alertData);
 
 		const element = document.getElementById("data-alerts");
