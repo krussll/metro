@@ -17,7 +17,7 @@ post_class: post-template
 				
 				<p>
 					<small>
-						<span class="post-date"><time class="post-date">Last Updated: </time></span>
+						<span class="post-date"><time id="post-date" class="post-date">Last Updated: </time></span>
 					</small>
 				</p>
 			</div>
@@ -78,12 +78,16 @@ post_class: post-template
 	fetch('https://us-central1-mythic-rain-390.cloudfunctions.net/GetMetroStatus?routeId={{ page.route }}').then(async (response) => {
 		
 		const alertData = await response.json()
+		const date = new Date(alertData.lastUpdated);
 		console.log('json', alertData);
+		console.log(date.toLocaleString("en-US", {timeZone: "America/New_York"}))
 
 		const element = document.getElementById("data-alerts");
+		const dateEl = document.getElementById("post-date");
 		
+		dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
 
-		alertData.currentAlerts.forEach((alert) => {
+		alertData.currentIssues.forEach((alert) => {
 			var para = document.createElement("p");
 			var node = document.createTextNode(alert.header);
 			para.appendChild(node);
