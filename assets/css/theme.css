@@ -342,6 +342,15 @@ span.post-name a,span.post-read-more a:hover {
 	margin-bottom:1rem;
     text-align: center;
 }
+.mainheading .alerts {
+    background-color: #FAF1E1;
+    padding: 20px;
+    text-align: center;
+}
+
+.alerts .alert p {
+    font-weight: 500;
+}
 .intro {
     background-color: #277C80;
     padding: 3rem 0;

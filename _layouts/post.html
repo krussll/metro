@@ -13,6 +13,7 @@ post_class: post-template
 				{% if page.route %}<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">{% endif %}
 			
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
+				<h2 class="lead" id="data-alerts-summary"></h2>
 				<div data-alerts class="alerts" id="data-alerts"></div>
 				
 				<p>
@@ -34,6 +35,7 @@ post_class: post-template
 				<div data-alerts class="alerts future" id="data-future-alerts"></div>
 				<div class="d-md-none">
 					{% if page.route %}
+						<h3>Stops on the {{ page.route }} train</h3>
 						{% include {{page.route}}-0.html %}
 						{% include {{page.route}}-1.html %}
 					{% endif %}
@@ -67,6 +69,7 @@ post_class: post-template
         <div class="col-md-4 col-lg-4">
 			<div class="sidebar-right d-none d-md-block">
 				{% if page.route %}
+					<h3>Stops on the {{ page.route }} train</h3>
 					{% include {{page.route}}-0.html %}
 					{% include {{page.route}}-1.html %}
 				{% endif %}
@@ -90,13 +93,13 @@ post_class: post-template
 		const element = document.getElementById("data-alerts");
 		const futureAlertEl = document.getElementById("data-future-alerts");
 		const dateEl = document.getElementById("post-date");
-		
+		const summaryEl = document.getElementById("data-alerts-summary");
 		dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
 
 		if (alertData.currentIssues.length == 0) {
-			var div = document.createElement("p");
-			div.textContent = "Good Service";
-			element.appendChild(div);
+			summaryEl.textContent = "Good Service";
+		} else {
+			summaryEl.textContent = alertData.currentIssues.length + " alerts on line";
 		}
 
 		alertData.currentIssues.forEach((alert) => {
@@ -107,11 +110,14 @@ post_class: post-template
 			element.appendChild(div);
 		})
 
+		var div = document.createElement("p");
 		if (alertData.futureIssues.length == 0) {
-			var div = document.createElement("p");
 			div.textContent = "No known future issues on this line";
-			futureAlertEl.appendChild(div);
+		} else {
+			div.textContent = alertData.futureIssues.length + " planned issues on line"
 		}
+
+		futureAlertEl.appendChild(div);
 
 		alertData.futureIssues.forEach((alert) => {
 			var div = document.createElement("div");
