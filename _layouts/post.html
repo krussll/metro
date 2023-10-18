@@ -93,6 +93,12 @@ post_class: post-template
 		
 		dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
 
+		if (alertData.currentIssues.length == 0) {
+			var div = document.createElement("p");
+			div.textContent = "Good Service";
+			element.appendChild(div);
+		}
+
 		alertData.currentIssues.forEach((alert) => {
 			var div = document.createElement("div");
 			div.classList.add("alert");
@@ -100,6 +106,12 @@ post_class: post-template
 
 			element.appendChild(div);
 		})
+
+		if (alertData.futureIssues.length == 0) {
+			var div = document.createElement("p");
+			div.textContent = "No known future issues on this line";
+			futureAlertEl.appendChild(div);
+		}
 
 		alertData.futureIssues.forEach((alert) => {
 			var div = document.createElement("div");
