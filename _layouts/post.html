@@ -33,6 +33,12 @@ post_class: post-template
 			<div class="article-post"  itemprop="articleBody"> 
 				<div data-alerts class="alerts future" id="data-future-alerts"></div>
 				{{content}}
+				<div class="d-md-none">
+					{% if page.route %}
+						{% include {{page.route}}-0.html %}
+						{% include {{page.route}}-1.html %}
+					{% endif %}
+				</div>
 				<div class="clearfix"></div>
 			</div>
 
@@ -60,7 +66,7 @@ post_class: post-template
 
         <!-- Right Sidebar -->
         <div class="col-md-4 col-lg-4">
-			<div class="sidebar-right">
+			<div class="sidebar-right d-none d-md-block">
 				{% if page.route %}
 					{% include {{page.route}}-0.html %}
 					{% include {{page.route}}-1.html %}
