@@ -31,7 +31,7 @@ post_class: post-template
 		<div class="col-md-8 col-lg-8">
 			<!-- Post Content -->
 			<div class="article-post"  itemprop="articleBody"> 
-				<div data-future-alerts></div>
+				<div data-alerts class="alerts future" id="data-future-alerts"></div>
 				{{content}}
 				<div class="clearfix"></div>
 			</div>
@@ -83,6 +83,7 @@ post_class: post-template
 		console.log(date.toLocaleString("en-US", {timeZone: "America/New_York"}))
 
 		const element = document.getElementById("data-alerts");
+		const futureAlertEl = document.getElementById("data-future-alerts");
 		const dateEl = document.getElementById("post-date");
 		
 		dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
@@ -93,6 +94,14 @@ post_class: post-template
 			div.innerHTML = alert.header.trim() + alert.description.trim();
 
 			element.appendChild(div);
+		})
+
+		alertData.futureIssues.forEach((alert) => {
+			var div = document.createElement("div");
+			div.classList.add("alert");
+			div.innerHTML = alert.header.trim() + alert.description.trim();
+
+			futureAlertEl.appendChild(div);
 		})
 	})
 	.catch(function (err) {
