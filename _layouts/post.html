@@ -13,7 +13,7 @@ post_class: post-template
 				{% if page.route %}<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">{% endif %}
 			
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
-				<div data-alerts></div>
+				<div data-alerts id="data-alerts"></div>
 				
 				<p>
 					<small>
@@ -76,7 +76,20 @@ post_class: post-template
 	<script>
 
 	fetch('https://us-central1-mythic-rain-390.cloudfunctions.net/GetMetroStatus?routeId={{ page.route }}').then(function (response) {
-		console.log('json', response.json());
+		
+		const alertData = response.json()
+		console.log('json', alertData);
+
+		const element = document.getElementById("data-alerts");
+		
+
+		alertData.currentAlerts.forEach((alert) => {
+			var para = document.createElement("p");
+			var node = document.createTextNode(alert.header);
+			para.appendChild(node);
+
+			element.appendChild(para);
+		})
 	})
 	.catch(function (err) {
 		// There was an error
