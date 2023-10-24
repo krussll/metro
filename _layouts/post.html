@@ -67,6 +67,7 @@ post_class: post-template
         <!-- Right Sidebar -->
         <div class="col-md-4 col-lg-4">
 			<div class="sidebar-right d-none d-md-block">
+				<h3>Stops on the {{ page.route }} train</h3>
 				<ul class="nav nav-tabs" id="ex1" role="tablist">
 				  <li class="nav-item" role="presentation">
 				    <a
@@ -98,7 +99,7 @@ post_class: post-template
 
 
 				
-				<div class="tab-content" id="ex1-content"><h3>Stops on the {{ page.route }} train</h3>
+				<div class="tab-content" id="ex1-content">
   					<div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
 						{% include {{page.route}}-0.html %}
 					</div>
