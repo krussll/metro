@@ -10,11 +10,10 @@ post_class: post-template
 	<div class="row">
 		<div class="col-md-12">
 			<div class="mainheading">
-				{% if page.route %}<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">{% endif %}
+				<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">
 			
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
-				<h2 class="lead" id="data-alerts-summary"></h2>
-				<div data-alerts class="line-alerts" id="data-alerts"></div>
+				{% include {{page.route}}-status.html %}
 				
 				<p>
 					<small>
@@ -82,35 +81,12 @@ post_class: post-template
 ================================================== -->
 {% if page.route %}
 	<script>
+		//const date = new Date(alertData.lastUpdated);
+		//dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
 
-	fetch('https://us-central1-mythic-rain-390.cloudfunctions.net/GetMetroStatus?routeId={{ page.route }}').then(async (response) => {
 		
-		const alertData = await response.json()
-		const date = new Date(alertData.lastUpdated);
-		console.log('json', alertData);
-		console.log(date.toLocaleString("en-US", {timeZone: "America/New_York"}))
 
-		const element = document.getElementById("data-alerts");
-		const futureAlertEl = document.getElementById("data-future-alerts");
-		const dateEl = document.getElementById("post-date");
-		const summaryEl = document.getElementById("data-alerts-summary");
-		dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
-
-		if (alertData.currentIssues.length == 0) {
-			summaryEl.textContent = "Good Service";
-		} else {
-			summaryEl.textContent = alertData.currentIssues.length + " alerts on line";
-		}
-
-		alertData.currentIssues.forEach((alert) => {
-			var div = document.createElement("div");
-			div.classList.add("line-alert");
-			div.innerHTML = alert.header.trim() + alert.description.trim();
-
-			element.appendChild(div);
-		})
-
-		var div = document.createElement("p");
+		/*var div = document.createElement("p");
 		if (alertData.futureIssues.length == 0) {
 			div.textContent = "No known future issues on this line";
 		} else {
@@ -125,11 +101,7 @@ post_class: post-template
 			div.innerHTML = alert.header.trim() + alert.description.trim();
 
 			futureAlertEl.appendChild(div);
-		})
-	})
-	.catch(function (err) {
-		// There was an error
-		console.warn('Failed to get status updates.', err);
-	});
+		})*/
+	
 	</script>
 {% endif %}
