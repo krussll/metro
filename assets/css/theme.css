@@ -357,7 +357,7 @@ span.post-name a,span.post-read-more a:hover {
     font-weight: 500;
 }
 .intro {
-    background-color: #277C80;
+    background-color: #FFBD59;
     padding: 3rem 0;
     margin-top: -55px;
     margin-bottom: 3.5rem;
@@ -365,7 +365,7 @@ span.post-name a,span.post-read-more a:hover {
     position: relative;
 }
 .intro .btn {
-    background: #fff100;
+    background: #7A59FF;
     border: 0;
     color: #333;
     border-radius: 3px;
@@ -393,11 +393,11 @@ span.post-name a,span.post-read-more a:hover {
     text-align: center;
 }
 .footer {
-	border-top:1px solid rgba(0,0,0,.05)!important;
+	border-top:1px solid #241A0C !important;
 	color:#999;
 	margin-top:50px;
     margin-bottom:0px;
-    background-color: #171e27;
+    background-color: #241A0C;
     padding: 30px 0px 30px 0;
 }
 .footersocial i {
