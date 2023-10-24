@@ -31,7 +31,7 @@ post_class: post-template
 		<div class="col-md-8 col-lg-8">
 			<!-- Post Content -->
 			<div class="article-post"  itemprop="articleBody"> 
-				<div data-alerts class="line-alerts future" id="data-future-alerts"></div>
+				{% include {{page.route}}-future.html %}
 				<div class="d-md-none">
 					{% if page.route %}
 						<h3>Stops on the {{ page.route }} train</h3>
@@ -82,26 +82,6 @@ post_class: post-template
 {% if page.route %}
 	<script>
 		//const date = new Date(alertData.lastUpdated);
-		//dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})
-
-		
-
-		/*var div = document.createElement("p");
-		if (alertData.futureIssues.length == 0) {
-			div.textContent = "No known future issues on this line";
-		} else {
-			div.textContent = alertData.futureIssues.length + " planned issues on line"
-		}
-
-		futureAlertEl.appendChild(div);
-
-		alertData.futureIssues.forEach((alert) => {
-			var div = document.createElement("div");
-			div.classList.add("line-alert");
-			div.innerHTML = alert.header.trim() + alert.description.trim();
-
-			futureAlertEl.appendChild(div);
-		})*/
-	
+		//dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})	
 	</script>
 {% endif %}
