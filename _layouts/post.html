@@ -81,7 +81,14 @@ post_class: post-template
 ================================================== -->
 {% if page.route %}
 	<script>
-		//const date = new Date(alertData.lastUpdated);
-		//dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})	
+		
+		fetch('{{ site.baseurl }}/assets/updated.json')
+    		.then((response) => response.json())
+			.then((alertData) => {
+				const date = new Date(alertData.lastUpdated);
+				var dateEl = document.getElementById("post-date")
+				dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})	
+			});
+		
 	</script>
 {% endif %}

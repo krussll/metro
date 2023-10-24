@@ -1,10 +1,10 @@
 # Site
 name: "Metro"
-title_suffix: "Zoo Near Me | Online Guides To The Best Zoos In The US State-By-State"
-title: "Online Guides To The Best Zoos In The US State-By-State"
-description: "Online Guides To The Best Zoos In The US State-By-State"
-meta_description: "Online Guides To The Best Zoos In The US State-By-State"
-logo: "/assets/images/zoonearme.png"
+title_suffix: "Metro | NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
+title: "NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
+description: "NYC Subway Alerts | Real-Time Updates for Smooth Commutese"
+meta_description: "NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
+logo: "/assets/images/logo.png"
 favicon: "/assets/images/favicon.ico"
 baseurl: "https://krussll.github.io/metro"
 permalink: /:categories/:title
