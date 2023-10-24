@@ -4,7 +4,7 @@
 <div class="col-md-6 grid-item">
 <div class="card">
     <a href="{{ site.baseurl }}{{ post.url }}">
-        {% if post.image %} <img class="img-fluid lazyload" data-src="{{ site.baseurl }}/assets/images/{{ page.route }}.jpg" alt="{{ post.title }}"> {% endif %}
+        <img class="img-fluid lazyload" data-src="{{ site.baseurl }}/assets/images/{{ post.route }}.jpg" alt="{{ post.title }}">
     </a>
     <div class="card-block">
         <h2 class="card-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
