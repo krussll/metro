@@ -123,6 +123,10 @@ section.recent-posts {
    color: rgba(36,26,12,.7) !important;	
 }
 
+.nav-pills a.nav-link {
+    box-shadow: none !important;
+}
+
 .nav-pills .nav-link.active {
     color: rgba(255,255,255,1) !important;
 }
