@@ -32,11 +32,17 @@ post_class: post-template
 			<!-- Post Content -->
 			<div class="article-post"  itemprop="articleBody"> 
 				{% include {{page.route}}-future.html %}
-				<div>
-					<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/nyc-subway/nyc_subway_map_{{ page.route }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway" itemprop="image">
-					<small><a href="{{ page.map_ref }}">{{ page.map_ref }}</a></small>
+				<div class="row">
+					<div class="col-sm-12 col-lg-6">
+						<h3>NYC Subway Map For {{ page.route }} Train</h3>
+						<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/nyc-subway/nyc_subway_map_{{ page.route }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway" itemprop="image">
+						<small><a href="{{ page.map_ref }}">{{ page.map_ref }}</a></small>
+					</div>
+					<div class="col-sm-12 col-lg-6">
+					</div>
 				</div>
 				<div class="d-md-none">
+					<h3>NYC Subway Stops For {{ page.route }} Train</h3>
 					<ul class="nav nav-pills nav-stacked" id="ex1" role="tablist">
 				  <li class="nav-item" role="presentation">
 				    <a
@@ -76,12 +82,13 @@ post_class: post-template
 				<div class="clearfix"></div>
 			</div>
 
-            	
+        <!--    	
 	<p>
 		<small itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 			<span itemprop="name">Metro</span>
 		</small>
 	</p>
+-->
 		{% if page.related_trains %}
 		<div class="masonrygrid row listrecent">
             {% assign related_routes = page.related_trains | split: "," %}
@@ -114,7 +121,7 @@ post_class: post-template
         <!-- Right Sidebar -->
         <div class="col-md-4 col-lg-4">
 			<div class="sidebar-right d-none d-md-block container">
-<!--				<h3>Stops on the {{ page.route }} train</h3> -->
+				<h3>NYC Subway Stops For {{ page.route }} Train</h3>
 				<ul class="nav nav-pills nav-stacked" id="ex1" role="tablist">
 				  <li class="nav-item" role="presentation">
 				    <a
