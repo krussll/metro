@@ -77,14 +77,17 @@ post_class: post-template
 		<small itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 			<span itemprop="name">Metro</span>
 		</small>
-
+	</p>
+			
 		<div class="masonrygrid row listrecent">
             
-			{%- assign posts = site.posts | where_exp: 'post', 'post.route == "7"' -%}
+			
+			{%- assign post = site.posts | where_exp: 'post', 'post.route == "7"' | first -%}
             {% include postbox.html %}
 
             
-        </div>
+        	</div>
+			
 
              <!-- Author Box -->
             {% if page.author %}
