@@ -82,8 +82,8 @@ post_class: post-template
 		<div class="masonrygrid row listrecent">
             		{% assign related_routes = "1,2,3,4" | split: "," %}
 			{% for r in related_routes %}
-				{% assign filter = 'post.route == "' | concat: r | concat: '"' %}	
-				{%- assign post = site.posts | where_exp: 'post', filter | first -%}
+				{% assign f = 'post.route == "' | append: r | append: '"' %}		
+				{%- assign post = site.posts | where_exp: 'post', f | first -%}
 				{% include postbox.html %}
 			{% endfor %}
         	</div>
