@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Welcome to NYC Subway Alerts, your go-to destination for real-time updates on the New York City subway system. 
+Welcome to Smooth Commutes, your go-to destination for real-time updates on the New York City subway system. 
 
 We understand that the NYC subway is the lifeline of the city, and we are committed to providing you with accurate and timely information to ensure a smooth and stress-free commute. 
 
