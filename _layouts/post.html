@@ -77,8 +77,10 @@ post_class: post-template
 		<small itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 			<span itemprop="name">Metro</span>
 		</small>
-
+	</p>
+			
 		<div class="masonrygrid row listrecent">
+<<<<<<< HEAD
             {% assign related_routes = "1,2,3,4" | split: "," %}
 			{% for r in related_routes %}
 				{% assign filter = 'post.route == "' | concat: r | concat: '"' %}	
@@ -88,8 +90,18 @@ post_class: post-template
 
             
         </div>
+=======
+            		{% assign related_routes = "1,2,3,4" | split: "," %}
+			{% for r in related_routes %}
+				{% assign f = 'post.route == "' | append: r | append: '"' %}		
+				{%- assign post = site.posts | where_exp: 'post', f | first -%}
+				{% include postbox.html %}
+			{% endfor %}
+        	</div>
+			
+>>>>>>> 29738672ca7ef4b568ad56b3adf29894a489fb6c
 
-             <!-- Author Box -->
+             <!-- Author Box 
             {% if page.author %}
 				<div class="row post-top-meta" itemprop="author" itemscope itemtype="http://schema.org/Person">
 					<div class="col-md-2">
@@ -101,7 +113,7 @@ post_class: post-template
 						<span class="author-description">{{ author.description }}</span>
 					</div>
 				</div>
-            {% endif %}
+            {% endif %} -->
 		</div>
 		<!-- End Post -->
 
