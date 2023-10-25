@@ -78,9 +78,9 @@ post_class: post-template
 			<span itemprop="name">Metro</span>
 		</small>
 	</p>
-			
+		{% if page.related_trains %}
 		<div class="masonrygrid row listrecent">
-            {% assign related_routes = "1,2,3,4" | split: "," %}
+            {% assign related_routes = page.related_trains | split: "," %}
 			{% for r in related_routes %}
 				{% assign f = 'post.route == "' | append: r | append: '"' %}	
 				{%- assign post = site.posts | where_exp: 'post', f | first -%}
@@ -89,6 +89,7 @@ post_class: post-template
 
             
         </div>
+		{% endif %}
 
              <!-- Author Box 
             {% if page.author %}
