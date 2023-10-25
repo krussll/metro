@@ -6,7 +6,7 @@ description: "NYC Subway Alerts | Real-Time Updates for Smooth Commutese"
 meta_description: "NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
 logo: "/assets/images/logo.png"
 favicon: "/assets/images/favicon.ico"
-baseurl: "https://krussll.github.io/metro"
+baseurl: "https://www.smoothcommutes.com"
 permalink: /:categories/:title
 email: ""
 google_analytics: ""
