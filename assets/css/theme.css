@@ -115,8 +115,23 @@ section.recent-posts {
     border-right: 1px solid #eee;
 }
 
+.nav-link {
+    color: rgba(36,26,12,1) !important;	
+ }
+
 .nav-link:hover {
-   color: rgba(255,255,255,.7) !important;	
+   color: rgba(36,26,12,.7) !important;	
+}
+
+.nav-pills .nav-link.active {
+    color: rgba(255,255,255,1) !important;
+}
+.nav-pills .nav-link.active:hover {
+    color: rgba(255,255,255,.7) !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #FFBD59;
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link {
