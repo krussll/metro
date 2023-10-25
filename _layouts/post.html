@@ -79,9 +79,12 @@ post_class: post-template
 		</small>
 
 		<div class="masonrygrid row listrecent">
-            
-			{%- assign posts = site.posts | where_exp: 'post', 'post.route == "7"' -%}
-            {% include postbox.html %}
+            {% assign related_routes = "1,2,3,4" | split: "," %}
+			{% for r in related_routes %}
+				{% assign filter = 'post.route == "' | concat: r | concat: '"' %}	
+				{%- assign post = site.posts | where_exp: 'post', filter | first -%}
+				{% include postbox.html %}
+			{% endfor %}
 
             
         </div>
