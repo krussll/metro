@@ -114,14 +114,23 @@ section.recent-posts {
 .prevnextlinks .rightborder {
     border-right: 1px solid #eee;
 }
+
 .nav.nav-stacked {
     flex-direction: column;
 }
+
 .nav-link {
-    color: rgba(36,26,12,1) !important;	
+    color: rgba(255,255,255,1) !important;	
  }
 
 .nav-link:hover {
+   color: rgba(255,255,255,.7) !important;	
+}
+.nav-pills .nav-link {
+    color: rgba(36,26,12,1) !important;	
+ }
+
+ .nav-pills .nav-link:hover {
    color: rgba(36,26,12,.7) !important;	
 }
 
