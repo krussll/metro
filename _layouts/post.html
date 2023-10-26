@@ -31,12 +31,13 @@ post_class: post-template
 		<div class="col-md-8 col-lg-8">
 			<!-- Post Content -->
 			<div class="article-post"  itemprop="articleBody"> 
+				<h3>Planned Issues For NYC {{ page.route }} Train</h3>
 				{% include {{page.route}}-future.html %}
 				<div class="row">
 					<div class="col-sm-12 col-lg-6">
 						<h3>NYC Subway Map For {{ page.route }} Train</h3>
 						<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/nyc-subway/nyc_subway_map_{{ page.route }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway" itemprop="image">
-						<small><a href="{{ page.map_ref }}">{{ page.map_ref }}</a></small>
+						<small><a href="{{ page.map_ref }}">SOURCE: Wiki</a></small>
 					</div>
 					<div class="col-sm-12 col-lg-6">
 					</div>
