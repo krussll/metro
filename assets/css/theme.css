@@ -136,6 +136,8 @@ section.recent-posts {
 
 .nav-pills a.nav-link {
     box-shadow: none !important;
+    border-bottom: 3px #FFBD59 solid;
+    margin-bottom: 7px;
 }
 
 .nav-pills .nav-link.active {
@@ -161,19 +163,16 @@ section.recent-posts {
     color: #fff;
     border-radius: 4px;
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-        padding-left: 1em;
-    padding-right: 1em;
-    
+    padding-left: 1em;
+    padding-right: 1em;    
 }
 .navbar-toggler {
     z-index:9999;
 }
-
 .line-alert {
     padding: 16px;
     margin-bottom: 16px;
 }
-
 .article-post .line-alert {
     border-bottom: 3px #F9F9F9 solid;
 }
