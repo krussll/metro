@@ -177,7 +177,9 @@ section.recent-posts {
 .article-post .line-alert {
     border-bottom: 3px #F9F9F9 solid;
 }
-
+.article-post .line-alert small {
+    display: block;
+}
 .navbar-toggleable-md .navbar-nav .nav-link {
     margin-left: 1rem;
     font-weight: 500;
