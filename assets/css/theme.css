@@ -175,7 +175,7 @@ section.recent-posts {
 }
 
 .article-post .line-alert {
-    background-color: #F9F9F9;
+    border-bottom: 3px #F9F9F9 solid;
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link {
