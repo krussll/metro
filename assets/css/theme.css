@@ -525,11 +525,21 @@ video {
 	margin-left:0;
 }
 
-.stop li::before {
+.stops {
+    list-style: none;
+}
+
+li.stop::before {
     content: " ";
     left: -6px;
     border-width: 3px;
     border-style: solid;
+}
+
+li.stop {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e2e2;
 }
 .share ul li i.fa {border:1px solid #ddd; width:30px; height:30px; line-height:30px;text-align:center;border-radius:50%;}
 .svgIcon {
