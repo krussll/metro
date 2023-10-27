@@ -543,7 +543,7 @@ video {
     position: absolute;
     border-radius: 1rem;
     width: 0.25rem;
-    height: calc(100% - 38px);
+    height: calc(100% - 44px);
     background-color: #5e6975;
 }
 
