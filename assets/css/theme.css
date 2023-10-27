@@ -535,9 +535,21 @@ video {
     position: relative;
 }
 
+.stops::before {
+    content: " ";
+    left: 26px;
+    top: 18px;
+    bottom: 64px;
+    position: absolute;
+    border-radius: 1rem;
+    width: 0.25rem;
+    height: calc(100% - 38px);
+    background-color: #5e6975;
+}
+
 li.stop::before {    
     content: " ";
-    left: 18px;
+    left: -18px;
     top: 18px;
     border-style: solid;
     color: #5e6975;
@@ -550,6 +562,7 @@ li.stop::before {
 }
 
 li.stop {
+    position: relative;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid #e2e2e2;
