@@ -524,16 +524,26 @@ video {
 	padding-left:0;
 	margin-left:0;
 }
-
+.tab-content {
+    background-color: #f9f9fa;
+    border-radius: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
 .stops {
     list-style: none;
+    position: relative;
 }
 
-li.stop::before {
+li.stop::before {    
     content: " ";
-    left: -6px;
-    border-width: 3px;
+    left: -20px;
+    top: 20px;
     border-style: solid;
+    color: #5e6975;
+    fill: #5e6975;
+    position: absolute;
+    border-radius: 1rem;
 }
 
 li.stop {
