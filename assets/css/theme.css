@@ -537,13 +537,16 @@ video {
 
 li.stop::before {    
     content: " ";
-    left: -20px;
-    top: 20px;
+    left: 18px;
+    top: 18px;
     border-style: solid;
     color: #5e6975;
     fill: #5e6975;
     position: absolute;
     border-radius: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #f9f9fa;
 }
 
 li.stop {
