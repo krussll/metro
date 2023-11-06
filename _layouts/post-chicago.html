@@ -14,7 +14,7 @@ post_class: post-template
 			
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
 				<h2 class="lead">{{ page.description }}</h2>
-				{% include {{page.route_code}}-status.html %}
+				{% include {{page.route_code}}-status-CHI.html %}
 				
 				<p>
 					<small>
@@ -36,11 +36,14 @@ post_class: post-template
 				<h2 class="lead text-success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>No known future issues on this line</h2>
 				
 				<div class="row">
+				<!--
 					<div class="col-sm-12 col-lg-6">
 						<h3>{{ page.city }} Subway Map For {{ page.route }} Train</h3>
-						<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/nyc-subway/nyc_subway_map_{{ page.route_code }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway" itemprop="image">
+						<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/chi-subway/chi_subway_map_{{ page.route_code }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway" itemprop="image">
 						<small><a href="{{ page.map_ref }}">SOURCE: Wiki</a></small>
 					</div>
+				-->
+				<!--
 					<div class="col-sm-12 col-lg-6">
 						<div class="d-md-none">
 							<h3>Stops For {{ page.route }} Train</h3>
@@ -73,14 +76,14 @@ post_class: post-template
 		
 							<div class="tab-content" id="ex1-content">
 								<div class="tab-pane active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-									{% include {{page.route_code}}-0.html %}
+									{% include {{page.route_code}}-0-CHI.html %}
 								</div>
 								<div class="tab-pane" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-									{% include {{page.route_code}}-1.html %}
+									{% include {{page.route_code}}-1-CHI.html %}
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>-->
 				</div>
 				
 				<div class="clearfix"></div>
@@ -124,6 +127,7 @@ post_class: post-template
 
         <!-- Right Sidebar -->
         <div class="col-md-4 col-lg-4">
+			<!--
 			<div class="sidebar-right d-none d-md-block container">
 				<h3>Stops For {{ page.route }} Train</h3>
 				<ul class="nav nav-pills nav-stacked" id="ex1" role="tablist">
@@ -155,13 +159,13 @@ post_class: post-template
 
 				<div class="tab-content" id="ex1-content">
   					<div class="tab-pane active" id="ex1-md-tabs-1" role="tabpanel" aria-labelledby="ex1-md-tab-1">
-						{% include {{page.route_code}}-0.html %}
+						{% include {{page.route_code}}-0-CHI.html %}
 					</div>
 					<div class="tab-pane" id="ex1-md-tabs-2" role="tabpanel" aria-labelledby="ex1-md-tab-2">
-						{% include {{page.route_code}}-1.html %}
+						{% include {{page.route_code}}-1-CHI.html %}
 					</div>
 				</div>
-			</div>
+			</div>-->
         </div>
 
 	</div>
@@ -176,7 +180,7 @@ post_class: post-template
 			.then((alertData) => {
 				const date = new Date(alertData.lastUpdated);
 				var dateEl = document.getElementById("post-date")
-				dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})	
+				dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/Chicago"})	
 			});
 		
 	</script>
