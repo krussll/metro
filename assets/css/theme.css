@@ -382,6 +382,7 @@ span.post-name a,span.post-read-more a:hover {
 	font-weight:700;
 	margin-bottom:1rem;
     text-align: center;
+    font-size: 30px;
 }
 .mainheading .lead {
     font-size: 1.25rem;
