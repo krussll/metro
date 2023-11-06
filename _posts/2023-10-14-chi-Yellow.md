@@ -6,7 +6,7 @@ categories: [ "chi", "subway" ]
 route: "Yellow"
 route_code: "Y"
 city: "Chicago"
-description: "(Dempster-Skokie and Howard)"
+description: "Chicago Yellow Train Status. Is the Yellow train running today?"
 first_paragraph: "(Dempster-Skokie and Howard)"
 direction_out: "Dempster-Skokie"
 direction_back: "Howard"

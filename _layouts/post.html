@@ -12,8 +12,9 @@ post_class: post-template
 			<div class="mainheading">
 				<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route_code }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">
 			
-				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
-				<h2 class="lead">{{ page.description }}</h2>
+				<h2 class="posttitle" itemprop="headline name">{{ page.title }}</h2>
+				<h3 class="lead">{{ page.first_paragraph }}</h3>
+				<h1 class="lead">{{ page.description }}</h1>
 				{% include {{page.route_code}}-status.html %}
 				
 				<p>
