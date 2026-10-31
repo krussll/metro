@@ -21,4 +21,5 @@ authors:
     email: "reece@reecewilliams.co"
     avatar: "/assets/images/logo.png"
     description: "Daily transit researcher and commuter tracking subway alerts, planned maintenance schedules, and rail service across NYC, Chicago, and Washington D.C."
+    job_title: "Lead Developer & Transit Data Researcher"
     url: "/about"

@@ -1,0 +1,307 @@
+<!-- Reusable Comprehensive Route & Commuter Guide
+================================================== -->
+<div class="route-guide-wrapper mt-4 pt-3 border-top">
+
+  <!-- Section 1: Route Overview & Terminus Info -->
+  <section class="route-overview mb-4">
+    <h3 class="h4 font-weight-bold text-dark"><i class="fas fa-route text-primary mr-2"></i>{{ page.city }} {{ page.route }} Train Overview</h3>
+    <p>
+      The <strong>{{ page.city }} {{ page.route }} Train</strong> {{ page.first_paragraph }} provides vital rapid rail transit connecting <strong>{{ page.direction_back }}</strong> and <strong>{{ page.direction_out }}</strong>. 
+      {% if page.categories contains 'nyc' %}
+        Operated by the <strong><a href="https://new.mta.info" target="_blank" rel="noopener">Metropolitan Transportation Authority (MTA)</a></strong> New York City Subway division, this line serves daily commuters across key residential, commercial, and transit hubs.
+      {% elsif page.categories contains 'chi' %}
+        Operated by the <strong><a href="https://www.transitchicago.com" target="_blank" rel="noopener">Chicago Transit Authority (CTA)</a></strong>, this iconic 'L' rapid transit line connects key neighborhood corridors with downtown Chicago.
+      {% elsif page.categories contains 'dc' %}
+        Operated by the <strong><a href="https://www.wmata.com" target="_blank" rel="noopener">Washington Metropolitan Area Transit Authority (WMATA)</a></strong>, this Metrorail line provides rapid inter-jurisdictional transit across the District of Columbia, Maryland, and Northern Virginia.
+      {% endif %}
+    </p>
+  </section>
+
+  <!-- Section 2: Operating Hours & Headway Frequency -->
+  <section class="route-schedule mb-4">
+    <h3 class="h4 font-weight-bold text-dark"><i class="far fa-clock text-primary mr-2"></i>Schedule &amp; Train Frequency</h3>
+    {% if page.categories contains 'nyc' %}
+      <p>
+        The NYC Subway operates <strong>24 hours a day, 7 days a week, 365 days a year</strong>. Train arrival frequencies vary based on peak commuting hours, off-peak midday travel, and late-night maintenance windows:
+      </p>
+      <ul class="list-unstyled pl-3">
+        <li><i class="fas fa-check-circle text-success mr-2"></i><strong>Weekday Rush Hours (6:30 AM – 9:30 AM &amp; 3:30 PM – 8:00 PM)</strong>: Trains typically arrive every <strong>2 to 5 minutes</strong>.</li>
+        <li><i class="fas fa-check-circle text-success mr-2"></i><strong>Midday &amp; Evenings</strong>: Trains arrive every <strong>6 to 10 minutes</strong>.</li>
+        <li><i class="fas fa-info-circle text-warning mr-2"></i><strong>Late Nights (12:00 AM – 5:00 AM)</strong>: Headways extend to every <strong>12 to 20 minutes</strong>. Planned track maintenance frequently reroutes trains or requires express/local bypass tracks during overnight hours.</li>
+        <li><i class="fas fa-calendar-alt text-info mr-2"></i><strong>Weekends</strong>: Headways typically range from <strong>8 to 12 minutes</strong>, subject to planned weekend capital construction.</li>
+      </ul>
+    {% elsif page.categories contains 'chi' %}
+      <p>
+        {% if page.route == 'Red' or page.route == 'Blue' %}
+          The <strong>Chicago {{ page.route }} Line is one of two CTA rail routes operating 24 hours a day, 365 days a year</strong>, providing non-stop transit between outer neighborhoods and downtown Chicago.
+        {% else %}
+          The <strong>Chicago {{ page.route }} Line</strong> operates continuous daily scheduled service, typically starting at approximately <strong>4:00 AM to 5:00 AM</strong> and running through <strong>1:00 AM</strong> past midnight. Consult the live status box above for any unexpected late-night service suspensions.
+        {% endif %}
+      </p>
+      <ul class="list-unstyled pl-3">
+        <li><i class="fas fa-check-circle text-success mr-2"></i><strong>Peak Rush Hours</strong>: Trains arrive every <strong>4 to 8 minutes</strong>.</li>
+        <li><i class="fas fa-check-circle text-success mr-2"></i><strong>Off-Peak &amp; Midday</strong>: Headways operate every <strong>10 to 12 minutes</strong>.</li>
+        <li><i class="fas fa-calendar-alt text-info mr-2"></i><strong>Weekends</strong>: Trains arrive approximately every <strong>12 to 15 minutes</strong>.</li>
+      </ul>
+    {% elsif page.categories contains 'dc' %}
+      <p>
+        The Washington Metrorail network operates standard system hours across all six lines:
+      </p>
+      <ul class="list-unstyled pl-3">
+        <li><i class="fas fa-calendar-day text-primary mr-2"></i><strong>Monday through Thursday</strong>: 5:00 AM – 12:00 AM (Midnight)</li>
+        <li><i class="fas fa-calendar-day text-primary mr-2"></i><strong>Friday</strong>: 5:00 AM – 1:00 AM</li>
+        <li><i class="fas fa-calendar-day text-primary mr-2"></i><strong>Saturday</strong>: 7:00 AM – 1:00 AM</li>
+        <li><i class="fas fa-calendar-day text-primary mr-2"></i><strong>Sunday</strong>: 7:00 AM – 12:00 AM (Midnight)</li>
+        <li><i class="fas fa-check-circle text-success mr-2"></i><strong>Frequency</strong>: Trains arrive every <strong>6 to 10 minutes</strong> during peak periods, and every <strong>10 to 15 minutes</strong> during off-peak and weekend hours. Stations served by multiple overlapping lines (e.g., Orange, Blue, and Silver) experience combined central trunk headways of every 3 to 5 minutes.</li>
+      </ul>
+    {% endif %}
+  </section>
+
+  <!-- Section 3: Transfer Hubs & Connections -->
+  <section class="route-transfers mb-4">
+    <h3 class="h4 font-weight-bold text-dark"><i class="fas fa-exchange-alt text-primary mr-2"></i>Key Transfer Hubs &amp; Intermodal Connections</h3>
+    <p>
+      Planning connections across the {{ page.city }} transit network allows riders to reach regional rail, airport shuttles, and connecting lines:
+    </p>
+    {% if page.categories contains 'nyc' %}
+      <p>
+        Major subway transfer stations connect you to connecting subway lines and regional transit providers:
+      </p>
+      <ul>
+        <li><strong>Midtown Manhattan Transfer Centers</strong>: Connect at Times Square-42 St / Port Authority Bus Terminal (A, C, E, N, Q, R, W, 1, 2, 3, 7, S) and Grand Central-42 St (4, 5, 6, 7, S, Metro-North Railroad, Long Island Rail Road via Grand Central Madison).</li>
+        <li><strong>Downtown &amp; Lower Manhattan</strong>: Connect at Fulton Center (2, 3, 4, 5, A, C, J, Z, and PATH to New Jersey).</li>
+        <li><strong>Brooklyn &amp; Queens Junctions</strong>: Transfer at Atlantic Ave-Barclays Ctr (2, 3, 4, 5, B, D, N, Q, R, LIRR) or Jackson Heights-Roosevelt Ave (7, E, F, M, R).</li>
+        <li><strong>Airport Connections</strong>: Connect to JFK Airport via the AirTrain at Jamaica (E, J, Z, LIRR) or Howard Beach (A), and connect to Newark Airport (EWR) via NJ Transit from New York Penn Station (1, 2, 3, A, C, E).</li>
+      </ul>
+    {% elsif page.categories contains 'chi' %}
+      <p>
+        Key transfer stations connect across the elevated Loop and major regional rail stations:
+      </p>
+      <ul>
+        <li><strong>The Loop Elevated Structure</strong>: Clark/Lake and State/Lake provide premier mezzanine transfers connecting the elevated lines (Brown, Green, Orange, Pink, Purple) to subterranean Red and Blue Line platforms.</li>
+        <li><strong>Commuter Rail Connections (Metra &amp; Amtrak)</strong>: Easy access to Chicago Union Station, Ogilvie Transportation Center, and Millennium Station for Metra commuter trains and South Shore Line rail.</li>
+        <li><strong>Airport Connections</strong>: Direct rapid transit to <strong>O'Hare International Airport</strong> via the Blue Line, and direct transit to <strong>Midway International Airport</strong> via the Orange Line.</li>
+      </ul>
+    {% elsif page.categories contains 'dc' %}
+      <p>
+        Metrorail transfer stations provide seamless connections across Maryland, D.C., and Virginia:
+      </p>
+      <ul>
+        <li><strong>Downtown Core Transfer Hubs</strong>: Metro Center (Red, Orange, Silver, Blue), Gallery Place-Chinatown (Red, Green, Yellow), and L'Enfant Plaza (Blue, Orange, Silver, Green, Yellow, VRE).</li>
+        <li><strong>Airport Rail Connections</strong>: The <strong>Silver Line</strong> connects directly to Washington Dulles International Airport (IAD), and the <strong>Blue and Yellow Lines</strong> provide direct terminal access to Ronald Reagan Washington National Airport (DCA).</li>
+        <li><strong>Regional Rail Connections</strong>: Transfer to Amtrak, MARC commuter rail (Maryland), and VRE (Virginia) at Washington Union Station (Red Line) and L'Enfant Plaza / Alexandria.</li>
+      </ul>
+    {% endif %}
+  </section>
+
+  <!-- Section 4: Fares & Contactless Payment -->
+  <section class="route-fares mb-4">
+    <h3 class="h4 font-weight-bold text-dark"><i class="fas fa-credit-card text-primary mr-2"></i>Fares &amp; Contactless Payment</h3>
+    {% if page.categories contains 'nyc' %}
+      <p>
+        New York City Transit features the <strong><a href="https://omny.info" target="_blank" rel="noopener">OMNY Contactless Fare System</a></strong>:
+      </p>
+      <ul>
+        <li><strong>Tap-to-Pay</strong>: Simply tap your contactless credit card, debit card, smartphone (Apple Pay / Google Wallet), or physical OMNY card at any subway turnstile.</li>
+        <li><strong>Base Fare</strong>: $2.90 per ride.</li>
+        <li><strong>Weekly Fare Capping</strong>: Once you pay for 12 rides with the same device or card within a Monday-to-Sunday window, all subsequent rides for the remainder of that week are automatically <strong>free</strong>.</li>
+        <li><strong>Free Transfers</strong>: One free transfer is automatically granted between subways and local buses within a 2-hour window.</li>
+      </ul>
+    {% elsif page.categories contains 'chi' %}
+      <p>
+        The Chicago Transit Authority utilizes the <strong><a href="https://www.ventrachicago.com" target="_blank" rel="noopener">Ventra System</a></strong>:
+      </p>
+      <ul>
+        <li><strong>Tap-to-Pay</strong>: Tap any contactless bank card, Apple Pay / Google Wallet, or reloadable Ventra Card directly at station turnstiles.</li>
+        <li><strong>Base Rail Fare</strong>: $2.50 per ride.</li>
+        <li><strong>Unlimited Passes</strong>: 1-Day, 3-Day, 7-Day, and 30-Day unlimited ride passes can be purchased at station vending kiosks or within the Ventra mobile application.</li>
+      </ul>
+    {% elsif page.categories contains 'dc' %}
+      <p>
+        Metrorail fares are handled electronically via the <strong><a href="https://www.wmata.com/fares/smartrip/" target="_blank" rel="noopener">SmarTrip System</a></strong>:
+      </p>
+      <ul>
+        <li><strong>Payment</strong>: Use a physical SmarTrip plastic card or add a digital SmarTrip card to your Apple Wallet or Google Wallet. You must tap both when <strong>entering</strong> and when <strong>exiting</strong> the system.</li>
+        <li><strong>Distance &amp; Time-Based Fares</strong>: Fares vary based on distance traveled and time of day, ranging from $2.00 during off-peak hours up to $6.00 maximum for long-distance peak commutes.</li>
+        <li><strong>Bus-to-Rail Discount</strong>: Transfers between Metrobus and Metrorail receive an automatic $2.00 discount within a 2-hour window.</li>
+      </ul>
+    {% endif %}
+  </section>
+
+  <!-- Section 5: First-Hand Commuter Advice (Experience) -->
+  <section class="commuter-tips mb-4 p-3 bg-light rounded border">
+    <h3 class="h5 font-weight-bold text-dark"><i class="fas fa-lightbulb text-warning mr-2"></i>Daily Commuter Tips for the {{ page.route }} Line</h3>
+    {% if page.categories contains 'nyc' %}
+      <ul class="mb-0 pl-3">
+        <li><strong>Boarding Positioning</strong>: For rapid station exits, look for overhead directional signs on the platform indicating whether turnstiles or transfers are at the train's front, middle, or rear.</li>
+        <li><strong>Weekend Construction Nuances</strong>: Track work frequently causes local trains to run on express tracks or bypass stations in one direction. Always verify the live status above before boarding during weekend hours.</li>
+        <li><strong>Late Night Riding</strong>: If traveling between midnight and 5:00 AM, board the car with the conductor (indicated by an active zebra-striped board in the middle of the platform) or the front car near the train operator.</li>
+      </ul>
+    {% elsif page.categories contains 'chi' %}
+      <ul class="mb-0 pl-3">
+        <li><strong>Loop Navigation</strong>: When riding trains through the Loop elevated structure, listen carefully to conductor announcements as trains turn onto different sides of the elevated rectangle (Wells, Van Buren, Wabash, and Lake).</li>
+        <li><strong>Luggage &amp; Rush Hour</strong>: If heading to or from the airport with suitcases, board the center train cars where standee areas provide wider floor clearance without blocking doors.</li>
+        <li><strong>Elevator Status</strong>: Before traveling with wheelchairs or strollers, check live elevator operating conditions to avoid unexpected station closures.</li>
+      </ul>
+    {% elsif page.categories contains 'dc' %}
+      <ul class="mb-0 pl-3">
+        <li><strong>Tap In and Tap Out</strong>: Unlike flat-fare systems, Metrorail calculates fares upon exit. Always ensure your mobile phone or SmarTrip card remains accessible and charged throughout your journey.</li>
+        <li><strong>Stand Right, Walk Left</strong>: A sacred D.C. commuter rule: when riding station escalators, stand to the right and allow passing passengers to walk on the left.</li>
+        <li><strong>Track Work Single-Tracking</strong>: Scheduled weekend capital track work often requires trains to share a single track through construction zones, extending wait times to 15–20 minutes. Check the alert box above before heading into the station.</li>
+      </ul>
+    {% endif %}
+  </section>
+
+  <!-- Section 6: Official Agency Live Portals & Accessibility -->
+  <section class="official-resources mb-4">
+    <h3 class="h4 font-weight-bold text-dark"><i class="fas fa-external-link-alt text-primary mr-2"></i>Official Real-Time Agency Resources</h3>
+    <div class="row">
+      {% if page.categories contains 'nyc' %}
+        <div class="col-sm-6 mb-2">
+          <div class="card h-100 p-3">
+            <h5 class="h6 font-weight-bold mb-1">MTA Live Tools</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://map.mta.info">MTA Live Subway Map</a></li>
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://new.mta.info/alerts">MTA Official Service Alerts</a></li>
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://new.mta.info/elevator-escalator-status">MTA Elevator &amp; Escalator Status</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-2">
+          <div class="card h-100 p-3">
+            <h5 class="h6 font-weight-bold mb-1">Safety &amp; Customer Assistance</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-phone text-muted mr-1"></i>MTA Customer Service: <strong>511</strong></li>
+              <li><i class="fas fa-shield-alt text-muted mr-1"></i>MTA Police Emergency: <strong>(888) 682-7362</strong></li>
+              <li><i class="fas fa-comment text-muted mr-1"></i>MTA Police Text: <strong>(877) 682-8398</strong></li>
+            </ul>
+          </div>
+        </div>
+      {% elsif page.categories contains 'chi' %}
+        <div class="col-sm-6 mb-2">
+          <div class="card h-100 p-3">
+            <h5 class="h6 font-weight-bold mb-1">CTA Live Tools</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.transitchicago.com/traintracker/">CTA Train Tracker</a></li>
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.transitchicago.com/alerts/">CTA Customer Alerts</a></li>
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.transitchicago.com/elevators/">CTA Elevator Outages</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-2">
+          <div class="card h-100 p-3">
+            <h5 class="h6 font-weight-bold mb-1">Safety &amp; Assistance</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-phone text-muted mr-1"></i>CTA Customer Service: <strong>(888) 968-7282</strong></li>
+              <li><i class="fas fa-shield-alt text-muted mr-1"></i>CTA Security &amp; Safety: <strong>911</strong></li>
+              <li><i class="fas fa-link text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.transitchicago.com/security/">CTA Safety Guidelines</a></li>
+            </ul>
+          </div>
+        </div>
+      {% elsif page.categories contains 'dc' %}
+        <div class="col-sm-6 mb-2">
+          <div class="card h-100 p-3">
+            <h5 class="h6 font-weight-bold mb-1">WMATA Live Tools</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.wmata.com/service/status/">WMATA MetroPulse Live Status</a></li>
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.wmata.com/rider-guide/trip-planner/">WMATA Trip Planner</a></li>
+              <li><i class="fas fa-angle-right text-muted mr-1"></i><a target="_blank" rel="noopener" href="https://www.wmata.com/service/elevators-escalators/">WMATA Elevator &amp; Escalator Status</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-2">
+          <div class="card h-100 p-3">
+            <h5 class="h6 font-weight-bold mb-1">Safety &amp; Assistance</h5>
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-phone text-muted mr-1"></i>Customer Service: <strong>(202) 637-7000</strong></li>
+              <li><i class="fas fa-shield-alt text-muted mr-1"></i>Metro Transit Police: <strong>(202) 962-2121</strong></li>
+              <li><i class="fas fa-comment text-muted mr-1"></i>MTPD Emergency Text: <strong>69-6873</strong></li>
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Section 7: Frequently Asked Questions (FAQ) -->
+  <section class="route-faq mb-4">
+    <h3 class="h4 font-weight-bold text-dark"><i class="fas fa-question-circle text-primary mr-2"></i>Frequently Asked Questions</h3>
+    <div class="faq-accordion" id="routeFaqAccordion">
+      
+      <div class="card mb-2">
+        <div class="card-header bg-white p-3" id="faqHeading1">
+          <h4 class="h6 mb-0 font-weight-bold text-dark">
+            Is the {{ page.city }} {{ page.route }} Train running today?
+          </h4>
+        </div>
+        <div class="card-body p-3 text-muted">
+          Yes, the {{ page.city }} {{ page.route }} Train is scheduled to operate regular service today. Check the live status badge at the top of this page for active real-time delays, signal malfunctions, or planned track work advisories updated directly from official transit agency dispatch feeds.
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-header bg-white p-3" id="faqHeading2">
+          <h4 class="h6 mb-0 font-weight-bold text-dark">
+            What are the terminal stations for the {{ page.city }} {{ page.route }} Line?
+          </h4>
+        </div>
+        <div class="card-body p-3 text-muted">
+          The {{ page.route }} Train operates between <strong>{{ page.direction_back }}</strong> and <strong>{{ page.direction_out }}</strong>. Stop listings and travel direction tabs are displayed on the map module above.
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-header bg-white p-3" id="faqHeading3">
+          <h4 class="h6 mb-0 font-weight-bold text-dark">
+            How do I pay my fare on the {{ page.city }} transit network?
+          </h4>
+        </div>
+        <div class="card-body p-3 text-muted">
+          {% if page.categories contains 'nyc' %}
+            You can pay using OMNY tap-to-pay by tapping any contactless bank card, Apple Pay, Google Wallet, or OMNY card at the turnstile ($2.90 base fare), or by swiping a traditional MetroCard.
+          {% elsif page.categories contains 'chi' %}
+            You can tap any contactless debit/credit card, Apple Pay, Google Wallet, or reloadable Ventra Card directly at station turnstiles ($2.50 base fare).
+          {% elsif page.categories contains 'dc' %}
+            You can pay using a SmarTrip card or digital SmarTrip in Apple Wallet / Google Wallet. Fares are distance-based ($2.00 – $6.00), and you must tap both when entering and exiting station gates.
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- FAQPage Schema for Rich Search Snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the {{ page.city }} {{ page.route }} Train running today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the {{ page.city }} {{ page.route }} Train operates scheduled service between {{ page.direction_back }} and {{ page.direction_out }}. Real-time delays and planned disruptions are tracked live on Smooth Commutes via official agency GTFS-RT feeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the terminal stations for the {{ page.city }} {{ page.route }} Line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The {{ page.city }} {{ page.route }} Train connects {{ page.direction_back }} and {{ page.direction_out }}."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay my fare on the {{ page.city }} transit network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{% if page.categories contains 'nyc' %}Tap to pay with contactless credit/debit cards, Apple Pay, Google Wallet, or OMNY card ($2.90 base fare).{% elsif page.categories contains 'chi' %}Tap to pay with contactless bank cards, Apple Pay, Google Wallet, or Ventra card ($2.50 base fare).{% elsif page.categories contains 'dc' %}Pay using a SmarTrip card or Apple/Google Wallet digital SmarTrip with distance-based fares ($2.00 to $6.00).{% endif %}"
+      }
+    }
+  ]
+}
+</script>

@@ -64,6 +64,10 @@ post_class: post-template
 						<span class="post-date"><time id="live-post-date" class="live-update-timestamp">Last Updated: Loading...</time></span>
 					</small>
 				</p>
+				<div class="alert alert-info py-2 px-3 small d-flex align-items-center" role="alert">
+					<i class="fas fa-shield-alt text-primary mr-2 fa-lg"></i>
+					<span><strong>Data Verification Notice</strong>: Line alerts are synchronized every 15 minutes from official WMATA GTFS-RT agency feeds. During active platform emergencies, always follow the direct instructions of Metro Transit Police and station personnel.</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -128,6 +132,12 @@ post_class: post-template
 				</div>
 				
 				<div class="clearfix"></div>
+
+				<!-- Markdown Content & Comprehensive Route Guide -->
+				<div class="route-article-body mt-4">
+					{{ content }}
+					{% include route-guide.html %}
+				</div>
 			</div>
 
         <!--    	
@@ -150,19 +160,22 @@ post_class: post-template
         </div>
 		{% endif %}
 
-             <!-- Author Box 
-            {% if page.author %}
-				<div class="row post-top-meta" itemprop="author" itemscope itemtype="http://schema.org/Person">
-					<div class="col-md-2">
-						<img width="72" height="72" class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x"
-						     alt="{{ author.display_name }}">
-					</div>
-					<div class="col-md-10">
-						<a class="link-dark" href="{{ site.baseurl }}/about"><span itemprop="name">{{ author.display_name }} </span></a>
-						<span class="author-description">{{ author.description }}</span>
-					</div>
+			<!-- Author Box -->
+			{% if page.author %}
+			<div class="row post-top-meta mt-4 p-3 bg-light rounded border align-items-center" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<div class="col-sm-3 col-md-2 text-center mb-2 mb-sm-0">
+					<img width="72" height="72" class="author-thumb rounded-circle img-fluid" src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.display_name }}">
 				</div>
-            {% endif %} -->
+				<div class="col-sm-9 col-md-10">
+					<h5 class="mb-1">
+						<a class="link-dark font-weight-bold" href="{{ site.baseurl }}/about"><span itemprop="name">{{ author.display_name }}</span></a>
+						<span class="badge badge-default text-muted font-weight-normal ml-1">{{ author.job_title }}</span>
+					</h5>
+					<p class="author-description text-muted small mb-1">{{ author.description }}</p>
+					<small class="text-muted"><i class="fas fa-check-circle text-success mr-1"></i> Data automated via official open GTFS-RT feeds. Spotted an alert discrepancy? <a href="mailto:{{ author.email }}">Report a correction</a>.</small>
+				</div>
+			</div>
+			{% endif %}
 		</div>
 		<!-- End Post -->
 
@@ -205,6 +218,17 @@ post_class: post-template
 					<div class="tab-pane" id="ex1-md-tabs-2" role="tabpanel" aria-labelledby="ex1-md-tab-2">
 						{% include {{page.route_code}}-1-DC.html %}
 					</div>
+				</div>
+
+				<!-- Official Tools Sidebar Card -->
+				<div class="sidebar-section mt-4 pt-3 border-top">
+					<h5><span>Official WMATA Tools</span></h5>
+					<ul class="list-unstyled small">
+						<li class="mb-2"><i class="fas fa-subway text-primary mr-1"></i><a target="_blank" rel="noopener" href="https://www.wmata.com/service/status/">WMATA MetroPulse Status</a></li>
+						<li class="mb-2"><i class="fas fa-wheelchair text-primary mr-1"></i><a target="_blank" rel="noopener" href="https://www.wmata.com/service/elevators-escalators/">WMATA Elevator Outages</a></li>
+						<li class="mb-2"><i class="fas fa-credit-card text-success mr-1"></i><a target="_blank" rel="noopener" href="https://www.wmata.com/fares/smartrip/">SmarTrip Fare Guide</a></li>
+						<li class="mb-2"><i class="fas fa-database text-info mr-1"></i><a href="{{ site.baseurl }}/data-partners">GTFS-RT Data Sources</a></li>
+					</ul>
 				</div>
 			</div>
         </div>

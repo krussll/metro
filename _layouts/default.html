@@ -83,7 +83,35 @@
         "@id": "{{ site.url }}/#logo",
         "url": "{{ site.url }}/assets/images/logo.png",
         "caption": "Smooth Commutes"
+      },
+      "publishingPrinciples": "{{ site.url }}/about",
+      "correctionsPolicy": "{{ site.url }}/about#corrections",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support & Corrections",
+        "email": "reece@reecewilliams.co",
+        "availableLanguage": "English"
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#author-reece",
+      "name": "Reece Williams",
+      "jobTitle": "Lead Developer & Transit Data Researcher",
+      "url": "{{ site.url }}/about",
+      "email": "reece@reecewilliams.co",
+      "sameAs": [
+        "https://github.com/krussll"
+      ],
+      "knowsAbout": [
+        "Public Transit Operations",
+        "General Transit Feed Specification (GTFS)",
+        "GTFS-Realtime (GTFS-RT)",
+        "NYC Subway Operations (MTA)",
+        "Chicago 'L' Rapid Transit (CTA)",
+        "Washington Metrorail (WMATA)",
+        "Transit Service Alerts and Scheduling"
+      ]
     },
     {
       "@type": "WebSite",
@@ -181,33 +209,58 @@
         <div class="container">          
             <div class="row">
 
+                <!-- Column 1: Transit Networks -->
                 <div class="col-sm-3">
                   <div class="footer-widget">
+                    <h5 class="title">Transit Networks</h5>
+                    <ul>
+                      <li><a href="{{ site.baseurl }}/#nyc">NYC Subway (MTA)</a></li>
+                      <li><a href="{{ site.baseurl }}/#chicago">Chicago 'L' (CTA)</a></li>
+                      <li><a href="{{ site.baseurl }}/#dc">DC Metro (WMATA)</a></li>
+                      <li><a href="{{ site.baseurl }}/all-posts">All 37 Train Lines</a></li>
+                    </ul>
                   </div>
                 </div>
 
+                <!-- Column 2: Official Live Tools -->
                 <div class="col-sm-3">
                   <div class="footer-widget">
+                    <h5 class="title">Official Agency Tools</h5>
+                    <ul>
+                      <li><a target="_blank" rel="noopener" href="https://map.mta.info">MTA Live Subway Map</a></li>
+                      <li><a target="_blank" rel="noopener" href="https://www.transitchicago.com/traintracker/">CTA Train Tracker</a></li>
+                      <li><a target="_blank" rel="noopener" href="https://www.wmata.com/service/status/">WMATA MetroPulse</a></li>
+                      <li><a target="_blank" rel="noopener" href="https://omny.info">OMNY Contactless Fare</a></li>
+                    </ul>
                   </div>
                 </div>
 
+                <!-- Column 3: Safety & Accessibility -->
                 <div class="col-sm-3">
-                <div class="footer-widget">
-                </div>
+                  <div class="footer-widget">
+                    <h5 class="title">Safety & Accessibility</h5>
+                    <ul>
+                      <li><a href="{{ site.baseurl }}/data-partners">GTFS-RT Data Sources</a></li>
+                      <li><a target="_blank" rel="noopener" href="https://new.mta.info/elevator-escalator-status">MTA Elevator Outages</a></li>
+                      <li><a target="_blank" rel="noopener" href="https://www.transitchicago.com/elevators/">CTA Elevator Status</a></li>
+                      <li><a target="_blank" rel="noopener" href="https://www.wmata.com/service/elevators-escalators/">WMATA Elevator Status</a></li>
+                    </ul>
+                  </div>
                 </div>
 
-
+                <!-- Column 4: Smooth Commutes Info -->
                 <div class="col-sm-3">
-			<div class="footer-widget">
-                <h5 class="title">About {{ site.name }}</h5>
-                <ul>
-                <li><a href="{{ site.baseurl }}/about">About</a></li>
-                <li><a href="{{ site.baseurl }}/data-partners">Data Partners</a></li>
-                <li><a href="{{ site.baseurl }}/affiliate-disclaimer">Affiliate Disclaimer</a></li>
-                <li><a href="{{ site.baseurl }}/terms">Terms and Conditions</a></li>
-                <li><a href="{{ site.baseurl }}/privacy">Privacy Policy</a></li>
-                </ul>
-			</div>
+                  <div class="footer-widget">
+                    <h5 class="title">Smooth Commutes</h5>
+                    <ul>
+                      <li><a href="{{ site.baseurl }}/about">About Our Mission</a></li>
+                      <li><a href="{{ site.baseurl }}/contact">Contact & Feedback</a></li>
+                      <li><a href="{{ site.baseurl }}/data-partners">Data Transparency</a></li>
+                      <li><a href="{{ site.baseurl }}/privacy">Privacy Policy</a></li>
+                      <li><a href="{{ site.baseurl }}/terms">Terms & Conditions</a></li>
+                      <li><a href="{{ site.baseurl }}/affiliate-disclaimer">Affiliate Disclosure</a></li>
+                    </ul>
+                  </div>
                 </div>
             </div>
 
