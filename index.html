@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Real-Time NYC Subway Alerts
+title: Real-Time NYC, Chicago & DC Subway Alerts
+description: Real-time subway alerts, planned service disruptions, and line status updates for NYC Subway, Chicago 'L', and Washington D.C. Metro.
 canonical: /
 noAds: true
 ---
@@ -8,35 +9,17 @@ noAds: true
 <!-- Home Jumbotron
 ================================================== -->
 <section class="intro full-width">
-    <div class="wrapintro">
-        <h1>Real-Time NYC Subway Alerts</h1> 
-        <h2 class="lead">Stay Informed, Navigate with Confidence</h2>
+    <div class="wrapintro text-center">
+        <h1>Real-Time Subway &amp; Metro Alerts</h1> 
+        <h2 class="lead">Live Transit Disruptions &amp; Route Delays for NYC Subway, Chicago 'L' &amp; Washington D.C. Metro</h2>
+        <div class="city-navigation mt-3">
+            <a href="#nyc" class="btn btn-outline-primary btn-sm m-1"><i class="fas fa-subway mr-1"></i> NYC Subway</a>
+            <a href="#chicago" class="btn btn-outline-primary btn-sm m-1"><i class="fas fa-train mr-1"></i> Chicago 'L'</a>
+            <a href="#dc" class="btn btn-outline-primary btn-sm m-1"><i class="fas fa-subway mr-1"></i> DC Metro</a>
+        </div>
     </div>
 </section>
 
-
-<!-- Featured
-================================================== 
-<section class="featured-posts">
-
-    <div class="section-title">
-        <h2><span>Featured</span></h2>
-    </div>
-
-    <div class="row listfeaturedtag">
-
-    {% for post in site.posts %}
-
-        {% if post.featured == true %}
-                {% include featuredbox.html %}
-        {% endif %}
-
-    {% endfor %}
-
-    </div>
-
-</section>
--->
 <!-- Posts Index
 ================================================== -->
 <section class="recent-posts row">
@@ -47,17 +30,36 @@ noAds: true
 
     <div class="col-sm-8">
 
-        <div class="section-title">
-            <h2><span>NYC Subway Trains</span></h2>
+        <!-- NYC Subway Section -->
+        <div id="nyc" class="section-title">
+            <h2><span>NYC Subway Trains (MTA)</span></h2>
         </div>
-
         <div class="masonrygrid row listrecent">
             {% for post in site.categories.nyc %}
-
                 {% include postbox.html %}
-
             {% endfor %}
         </div>
+
+        <!-- Chicago Section -->
+        <div id="chicago" class="section-title mt-5">
+            <h2><span>Chicago 'L' Trains (CTA)</span></h2>
+        </div>
+        <div class="masonrygrid row listrecent">
+            {% for post in site.categories.chi %}
+                {% include postbox.html %}
+            {% endfor %}
+        </div>
+
+        <!-- Washington D.C. Section -->
+        <div id="dc" class="section-title mt-5">
+            <h2><span>Washington D.C. Metro (WMATA)</span></h2>
+        </div>
+        <div class="masonrygrid row listrecent">
+            {% for post in site.categories.dc %}
+                {% include postbox.html %}
+            {% endfor %}
+        </div>
+
     </div>
 
 </section>

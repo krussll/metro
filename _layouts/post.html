@@ -6,20 +6,62 @@ post_class: post-template
 
 <!-- Begin Article
 ================================================== -->
-<div itemscope itemtype="http://schema.org/BlogPosting">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ page.city }} Transit",
+          "item": "{{ site.url }}/#{{ page.categories[0] }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ page.title }}",
+          "item": "{{ site.url }}{{ page.url }}"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "{{ page.title }}",
+      "serviceType": "Public Transit Route Status",
+      "provider": { "@id": "{{ site.url }}/#organization" },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "{{ page.city }}"
+      },
+      "url": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+
+<div>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="mainheading">
-				<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route_code }}.jpg" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">
+				<img width="1280" height="240" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/{{ page.route_code }}.jpg" title="{{ page.title }}" alt="{{ page.title }}">
 			
-				<h2 class="posttitle" itemprop="headline name">{{ page.title }}</h2>
-				<h3 class="lead">{{ page.first_paragraph }}</h3>
-				<h1 class="lead">{{ page.description }}</h1>
+				<h1 class="posttitle">{{ page.title }}</h1>
+				<p class="lead font-weight-bold">{{ page.first_paragraph }}</p>
+				<p class="lead text-muted">{{ page.description }}</p>
 				{% include {{page.route_code}}-status.html %}
 				
 				<p>
 					<small>
-						<span class="post-date"><time id="post-date" class="post-date">Last Updated: </time></span>
+						<span class="post-date"><time id="live-post-date" class="live-update-timestamp">Last Updated: Loading...</time></span>
 					</small>
 				</p>
 			</div>
@@ -32,13 +74,13 @@ post_class: post-template
 
 		<div class="col-md-8 col-lg-8">
 			<!-- Post Content -->
-			<div class="article-post"  itemprop="articleBody"> 
+			<div class="article-post"> 
 				<h3>Planned Issues For {{ page.city }} {{ page.route }} Train</h3>
 				{% include {{page.route_code}}-future.html %}
 				<div class="row">
 					<div class="col-sm-12 col-lg-6">
 						<h3>{{ page.city }} Subway Map For {{ page.route }} Train</h3>
-						<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/nyc-subway/nyc_subway_map_{{ page.route_code }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway" itemprop="image">
+						<img width="838" height="1024" class="featured-image img-fluid" src="{{ site.baseurl }}/assets/images/nyc-subway/nyc_subway_map_{{ page.route_code }}_train.png" title="Map of the {{ page.route }} Train in NYC subway" alt="Map of the {{ page.route }} Train in NYC subway">
 						<small><a href="{{ page.map_ref }}">SOURCE: Wiki</a></small>
 					</div>
 					<div class="col-sm-12 col-lg-6">
@@ -114,7 +156,7 @@ post_class: post-template
 						     alt="{{ author.display_name }}">
 					</div>
 					<div class="col-md-10">
-						<a class="link-dark" href="/about-us"><span itemprop="name">{{ author.display_name }} </span></a>
+						<a class="link-dark" href="{{ site.baseurl }}/about"><span itemprop="name">{{ author.display_name }} </span></a>
 						<span class="author-description">{{ author.description }}</span>
 					</div>
 				</div>
@@ -175,8 +217,10 @@ post_class: post-template
     		.then((response) => response.json())
 			.then((alertData) => {
 				const date = new Date(alertData.lastUpdated);
-				var dateEl = document.getElementById("post-date")
-				dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"})	
+				var dateEl = document.getElementById("live-post-date");
+				if (dateEl) {
+					dateEl.textContent = "Last Updated: " + date.toLocaleString("en-US", {timeZone: "America/New_York"});
+				}
 			});
 		
 	</script>

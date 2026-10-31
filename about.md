@@ -1,26 +1,30 @@
 ---
 layout: page
-title: About
+title: About Smooth Commutes
+description: About Smooth Commutes, our transit research mission, data methodologies, and real-time coverage across NYC Subway, Chicago 'L', and Washington D.C. Metro.
 ---
 
-Welcome to Smooth Commutes, your go-to destination for real-time updates on the New York City subway system. 
+Welcome to **Smooth Commutes**, your dedicated portal for real-time public transit alerts, planned weekend disruptions, and line status updates across three major United States metropolitan rail networks: **New York City (MTA)**, **Chicago (CTA)**, and **Washington D.C. (WMATA)**.
 
-We understand that the NYC subway is the lifeline of the city, and we are committed to providing you with accurate and timely information to ensure a smooth and stress-free commute. 
+Public transit is the lifeblood of our cities. Whether you are navigating the morning rush hour on the NYC 1 train, connecting to O'Hare on the Chicago Blue Line, or heading into downtown D.C. via the Silver Line, having immediate, unadulterated knowledge of signal delays, track work, and service suspensions can make or break your day.
 
-Here is why you can rely on us:
+---
 
-1. Reliability and Accuracy: We take pride in our commitment to delivering accurate and up-to-date information. Our team of dedicated professionals works tirelessly to gather information from various sources, including official announcements, transit authorities, and user reports, to provide you with the most reliable updates.
+### Why Commuters Rely on Smooth Commutes
 
-2. Timeliness: We understand the importance of time when it comes to your daily commute. Our live alerts are continuously updated in real-time, ensuring you have access to the latest information as it happens. Whether it's delays, service changes, or station closures, we've got you covered.
+1. **Automated Freshness (15-Minute Pipeline)**: Our infrastructure polls official GTFS-RT agency feeds every 15 minutes, refreshing line alerts directly into fast, static HTML without bloated client-side JavaScript or trackers.
+2. **Multi-City Scope**: Rather than juggling disparate transit apps when traveling between cities, Smooth Commutes provides a unified, consistent interface for NYC, Chicago, and Washington D.C.
+3. **Transparency & Open Data**: We pull directly from official agency open-data portals (MTA, CTA, and WMATA). We do not rewrite or obscure dispatch warnings. For a complete technical breakdown, see our [Data Sources & Transit Partners]({{ site.baseurl }}/data-partners).
+4. **Speed & Accessibility**: Smooth Commutes is built on lightweight static architecture with zero tracking cookies or intrusive popups, ensuring pages load in milliseconds even in low-signal underground subway stations.
+5. **Completely Free & Independent**: Smooth Commutes is an independent civic tech resource built for daily transit riders.
 
-3. Transparency: We believe in transparency in all our operations. Our information sources are clearly cited, and we strive to provide context for every alert we publish. We want you to know where our information comes from and how we arrive at the conclusions we share.
+---
 
-4. Privacy and Security: We take your privacy and security seriously. We adhere to strict privacy standards and guidelines to ensure that your personal information is protected when you engage with our platform.
+### About the Author & Developer
 
-5. Independence: We are an independent platform with no affiliations with any subway service provider. Our sole purpose is to provide you with unbiased and reliable information to help you navigate the NYC subway system effectively.
+**Reece Williams** is a software developer, transit enthusiast, and daily commuter who created Smooth Commutes out of frustration with slow, ad-heavy official transit portals. Having relied extensively on daily rail commutes across metropolitan systems, Reece engineered Smooth Commutes to provide a fast, clean, and distraction-free transit status utility.
 
-6. Continual Improvement: We are committed to continually improving our services based on user feedback and evolving technology. Our goal is to provide an increasingly valuable resource for all NYC subway riders.
+- **Email**: [reece@reecewilliams.co](mailto:reece@reecewilliams.co)
+- **Corrections Policy**: If you spot an inaccurate stop name, a broken link, or a stale alert timestamp, please send a note to [reece@reecewilliams.co](mailto:reece@reecewilliams.co) and it will be investigated immediately.
 
-Thank you for choosing NYC Subway Alerts as your trusted source for subway updates. We understand the challenges of commuting in New York City, and we're here to make your subway experience as smooth as possible. 
-
-Your trust in us is our most significant asset, and we are dedicated to maintaining it through the quality and reliability of our information. Together, we'll keep NYC moving.
+Thank you for choosing **Smooth Commutes** as your daily transit companion. Together, let's keep our cities moving smoothly.

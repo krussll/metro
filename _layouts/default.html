@@ -16,15 +16,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="max-image-preview:large">
 <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
-<meta name="description" content="{% if page.description %}{{ page.description }} || {% endif %}{{ site.description }}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 	
 {% if page.tags != blank %}	
 <meta name="keyword" content="{{ page.tags }}">
 {% endif %}
 	
-<title>{{ page.title }} | {{site.title_suffix}}</title>
+<title>
+  {% if page.url == "/" %}
+    Real-Time NYC, Chicago & DC Subway Alerts | Smooth Commutes
+  {% elsif page.title %}
+    {{ page.title }} | Smooth Commutes
+  {% else %}
+    Smooth Commutes | Real-Time Public Transit Status & Alerts
+  {% endif %}
+</title>
   
-<link rel="canonical" href="{{ site.baseurl }}{{ page.url }}" />
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="{% if page.layout contains 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="Smooth Commutes">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | Smooth Commutes{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.route_code %}
+  {% if page.categories contains 'chi' %}
+    <meta property="og:image" content="{{ site.url }}/assets/images/{{ page.route_code }}-CHI.jpg">
+  {% elsif page.categories contains 'dc' %}
+    <meta property="og:image" content="{{ site.url }}/assets/images/{{ page.route_code }}-DC.jpg">
+  {% else %}
+    <meta property="og:image" content="{{ site.url }}/assets/images/{{ page.route_code }}.jpg">
+  {% endif %}
+{% else %}
+  <meta property="og:image" content="{{ site.url }}/assets/images/logo.png">
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | Smooth Commutes{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.route_code %}
+  {% if page.categories contains 'chi' %}
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/{{ page.route_code }}-CHI.jpg">
+  {% elsif page.categories contains 'dc' %}
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/{{ page.route_code }}-DC.jpg">
+  {% else %}
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/{{ page.route_code }}.jpg">
+  {% endif %}
+{% else %}
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/logo.png">
+{% endif %}
+
+<!-- Sitewide Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
+      "name": "Smooth Commutes",
+      "url": "{{ site.url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "{{ site.url }}/#logo",
+        "url": "{{ site.url }}/assets/images/logo.png",
+        "caption": "Smooth Commutes"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}",
+      "name": "Smooth Commutes",
+      "description": "{{ site.description }}",
+      "publisher": { "@id": "{{ site.url }}/#organization" }
+    }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -59,14 +130,23 @@
 
             <!-- Begin Menu -->
             <ul class="navbar-nav ml-auto">
-
                 <li class="nav-item">
                   <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/#nyc">NYC Subway</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                  <a class="nav-link" href="{{ site.baseurl }}/#chicago">Chicago 'L'</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/#dc">DC Metro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/all-posts">All Lines</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
                 </li>
             </ul>
             <!-- End Menu -->
@@ -122,10 +202,10 @@
                 <h5 class="title">About {{ site.name }}</h5>
                 <ul>
                 <li><a href="{{ site.baseurl }}/about">About</a></li>
-                <li><a href="{{ site.baseurl }}/data-partners" rel="nofollow">Data Partners</a></li>
-                <li><a href="{{ site.baseurl }}/affiliate-disclaimer" rel="nofollow">Affiliate Disclaimer</a></li>
-                <li><a href="{{ site.baseurl }}/terms" rel="nofollow">Terms and Conditions</a></li>
-                <li><a href="{{ site.baseurl }}/privacy" rel="nofollow">Privacy Policy</a></li>
+                <li><a href="{{ site.baseurl }}/data-partners">Data Partners</a></li>
+                <li><a href="{{ site.baseurl }}/affiliate-disclaimer">Affiliate Disclaimer</a></li>
+                <li><a href="{{ site.baseurl }}/terms">Terms and Conditions</a></li>
+                <li><a href="{{ site.baseurl }}/privacy">Privacy Policy</a></li>
                 </ul>
 			</div>
                 </div>

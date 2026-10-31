@@ -4,11 +4,18 @@
 <div class="col-md-6 grid-item">
 <div class="card">
     <a href="{{ site.baseurl }}{{ post.url }}">
-        <img class="img-fluid lazyload" data-src="{{ site.baseurl }}/assets/images/{{ post.route }}.jpg" alt="{{ post.title }}">
+      {% if post.categories contains 'chi' %}
+        {% assign img_src = post.route_code | append: '-CHI.jpg' %}
+      {% elsif post.categories contains 'dc' %}
+        {% assign img_src = post.route_code | append: '-DC.jpg' %}
+      {% else %}
+        {% assign img_src = post.route_code | append: '.jpg' %}
+      {% endif %}
+      <img class="img-fluid lazyload" data-src="{{ site.baseurl }}/assets/images/{{ img_src }}" alt="{{ post.title }}">
     </a>
     <div class="card-block">
-        <h2 class="card-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-        <h4 class="card-text">{{ post.description }}</h4>
+        <h3 class="card-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="card-text text-muted">{{ post.description }}</p>
     </div>
 </div>
 </div>

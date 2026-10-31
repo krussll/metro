@@ -1,22 +1,24 @@
-# Site
+# Site Identity & Canonical Configuration
 name: "Smooth Commutes"
-title_suffix: "Smooth Commutes | NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
-title: "NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
-description: "NYC Subway Alerts | Real-Time Updates for Smooth Commutese"
-meta_description: "NYC Subway Alerts | Real-Time Updates for Smooth Commutes"
+url: "https://www.smoothcommutes.com"
+baseurl: ""
+title: "Real-Time Subway & Metro Alerts"
+title_suffix: "Smooth Commutes"
+description: "Real-time subway alerts, planned service disruptions, and line status updates for NYC Subway, Chicago 'L', and Washington D.C. Metro."
+meta_description: "Real-time subway alerts, planned service disruptions, and line status updates for NYC Subway, Chicago 'L', and Washington D.C. Metro."
 logo: "/assets/images/logo.png"
 favicon: "/assets/images/favicon.ico"
-baseurl: "https://www.smoothcommutes.com"
 permalink: /:categories/:title
-email: ""
-google_analytics: ""
+email: "reece@reecewilliams.co"
+google_analytics: "G-6LXL5E75PW"
 future: true
 
-# Authors
+# Author Entity Profile
 authors:
   reece:
     name: Reece
-    display_name: Reece Williams 
-    gravatar:
-    email: ""
-    description: ""
+    display_name: "Reece Williams"
+    email: "reece@reecewilliams.co"
+    avatar: "/assets/images/logo.png"
+    description: "Daily transit researcher and commuter tracking subway alerts, planned maintenance schedules, and rail service across NYC, Chicago, and Washington D.C."
+    url: "/about"
