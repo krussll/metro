@@ -13,6 +13,13 @@ email: "reece@reecewilliams.co"
 google_analytics: "G-6LXL5E75PW"
 future: true
 
+# Build Exclusions
+exclude:
+  - agents
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
 # Author Entity Profile
 authors:
   reece:
